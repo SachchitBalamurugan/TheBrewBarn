@@ -300,6 +300,30 @@ img {
     background-color: transparent;
     box-shadow: none; }
 
+    .alazea-btn2 {
+      -webkit-transition-duration: 400ms;
+      transition-duration: 400ms;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      min-width: 150px;
+      height: 46px;
+      color: #ffffff;
+      background-color: #de944a;
+      border: 2px solid #241b12;
+      border-radius: 10px;
+      padding: 0 20px;
+      font-size: 16px;
+      line-height: 42px;
+      text-transform: uppercase;
+      font-weight: 600; }
+      .alazea-btn2.active, .alazea-btn2:hover, .alazea-btn2:focus {
+        font-size: 16px;
+        color: #987f49;
+        font-weight: 600;
+        background-color: transparent;
+        box-shadow: none; }
+    
 /* :: 4.0 Header Area CSS */
 .header-area {
   position: absolute;
