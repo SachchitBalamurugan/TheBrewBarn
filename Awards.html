@@ -19,6 +19,68 @@
 
     <!-- Custom CSS for Cards -->
     <style>
+
+.additional-cards-section {
+    background-color: #241B12;
+    padding: 100px 0;
+}
+
+.small-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.small-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 30%;
+    max-width: 150px;
+    text-align: center;
+}
+
+.small-card:hover {
+    transform: scale(1.05);
+}
+
+.small-card img {
+    width: 100%;
+    height: auto;
+}
+
+.small-card-content {
+    padding: 10px;
+}
+
+.small-card-title {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.small-card-text {
+    font-size: 0.875em;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .small-card {
+        width: 45%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .small-card {
+        width: 100%;
+        max-width: none;
+    }
+}
+
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -55,75 +117,76 @@
         }
 
         .card-title2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: white;
-        }
-        
-        .card-text {
-            color: #333;
-            font-size: 1em;
-        }
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+}
 
-        .card-text2 {
-            color: white;
-            font-size: 1em;
-        }
-        
-        @media (max-width: 768px) {
-            .card {
-                width: 100%;
-            }
-        }
+.card-text {
+    color: #333;
+    font-size: 1em;
+}
 
-        .new-section .card-container2 {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+.card-text2 {
+    color: white;
+    font-size: 1em;
+}
 
-        .new-section .card2 {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
 
-        .new-section .card2 img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.new-section .card-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-        .new-section .card-content2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            opacity: 0;
-            transition: opacity 0.3s;
-            text-align: center;
-            padding: 20px;
-        }
+.new-section .card2 {
+    position: relative;
+    width: 250px; /* Adjusted width */
+    height: 250px; /* Adjusted height */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
 
-        .new-section .card2:hover {
-            transform: scale(1.05);
-        }
+.new-section .card2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .new-section .card2:hover .card-content2 {
-            opacity: 1;
-        }
+.new-section .card-content2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+    padding: 20px;
+}
+
+.new-section .card2:hover {
+    transform: scale(1.05);
+}
+
+.new-section .card2:hover .card-content2 {
+    opacity: 1;
+}
+
 
     </style>
 </head>
@@ -211,85 +274,22 @@
     <!-- ##### Breadcrumb Area Start ##### -->
     <div style="background-color: #6b1212;" class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/core-img/imgpeople.png);">
-            <h2>ABOUT US</h2>
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/img10.jpeg);">
+            <h2>Our Achievements & Media Highlights</h2>
         </div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
     <!-- ##### Project Surya Section Start ##### -->
-    <section style="position: relative; background-color: #522b19;" class="project-surya-section section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2 style="color: white; font-weight: bold;">Project Surya</h2>
-                        <p style="color: white;">A Bengaluru based 1M1B Future Leader project</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="project-surya-content text-center">
-                        <p style="color: white;">Project Surya is a Bengaluru based 1M1B Future Leader project started by a 13-year-old Future Leader, Divaa Uthkarsha.</p>
-                        <p style="color: white;">At Project Surya, we believe that everyone deserves equal opportunities. But that is absent in the case of the underprivileged. If the underprivileged are out of focus then, what happens to the diabetic underprivileged? Moreover, the underprivileged Type-1 diabetic adolescents. As a 1M1B Future Leader project, we will go above and beyond to provide these diabetics the best of care they deserve.</p>
-                        <p style="color: white;">From support groups to family counselling, we aim to sweeten as many lives as possible.</p>
-                        <p style="color: white; margin-bottom: 100px">Curious to find out more about us and how you can get involved? Browse our website and get in touch with us today.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="background-animation"></div>
-    </section>
-    <!-- ##### Project Surya Section End ##### -->
-
-    <section style="background-color: #241B12;" class="our-services-area section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row justify-content-between">
-                        <div class="col-12 col-lg-5">
-                            <div class="alazea-service-area mb-100">
-                                <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
-                                    <!-- Content -->
-                                    <div class="service-content"></div>
-                                </div>
-
-                                <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms" style="margin-bottom: 10px;">
-                                    <div class="service-content">
-                                        <h5 style="color: white; margin-bottom: 5px;">Who Are We</h5>
-                                        <p style="color: white; margin-bottom: 20px;">Project Surya is an internationally recognized, entirely youth-led non-profit based in India but present globally, aiming to empower T1 diabetic adolescents from underprivileged and remote communities. We have a three-pronged action plan that covers awareness, advocacy and funding</p>
-                                        <h5 style="color: white; margin-bottom: 5px;">Vision, Mission and Goal</h5>
-                                        <p style="color: white; margin-bottom: 20px;">We envision a world where good health and well-being are made accessible, affordable and available to everyone, including millions of T1 diabetics globally. Project Surya's Mission is to focus on one of the most overlooked sectors of society – Type 1 diabetics, especially adolescents. Our mission is to spread awareness about T1 diabetes, identify underprivileged diabetics and connect them to the resources, doctors, and other tools required for better treatment and management of diabetes.</p>
-                                        <p style="color: white; margin-bottom: 20px;">Our goal is to bring T1 diabetics together, empower them through knowledge and resources, and make them future-ready through a comprehensive model of care and support.</p>
-                                    </div>
-                                </div>
-                                <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                    <!-- Content -->
-                                    <div class="service-content"></div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="alazea-video-area bg-overlay mb-100">
-                                <img src="img/bg-img/9.jpg" alt="">
-                                <a href="https://www.youtube.com/watch?v=mtvlbxxjK8A" class="video-icon">
-                                    <i class="fa fa-play" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    
 
             <!-- Cards Section Start -->
-            <div class="row">
+            <div class="row" style="background-color: #241b12;">
                 <div class="col-12">
-                    <h3 class="text-center" style="color: white; margin-top: 50px;">Awards</h3>
+                    <h3 class="text-center" style="color: white; margin-top: 50px;  margin-bottom: 50px; font-size: 50px;">Awards</h3>
                     <div class="card-container">
                         <div class="card">
-                            <img src="img/testNews.jpg" alt="Card Image 1">
+                            <img src="img/img8.jpeg" alt="Card Image 1">
                             <div class="card-content">
                                 <h3 class="card-title">Diana Award 2023: Highest Youth Award in the World for Humanitarian Impact</h3>
                                 <p class="card-text">Our founder Divaa Uthkarsha received the Diana Award 2023 and made it onto the roll of
@@ -303,49 +303,43 @@
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/card2.jpg" alt="Card Image 2">
+                            <img src="img/img2.jpeg" alt="Card Image 2">
                             <div class="card-content">
                                 <h3 class="card-title">Speaker at the United Nations Headquarters New York, 1M1B Activate Impact Summit
                                     ECOSOC chamber
                                     </h3>
-                                <p class="card-text">This is a description for card 2.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/card3.jpg" alt="Card Image 3">
+                            <img src="img/img3.jpeg" alt="Card Image 3">
                             <div class="card-content">
                                 <h3 class="card-title">Recognized as a 21 under 21 changemaker</h3>
-                                <p class="card-text">This is a description for card 3.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/card4.jpg" alt="Card Image 4">
+                            <img src="img/img4.jpeg" alt="Card Image 4">
                             <div class="card-content">
                                 <h3 class="card-title">Recognized as India’s top 7 changemakers - Divaa Uthkarsha - for Project Surya by
                                     Better India</h3>
-                                <p class="card-text">This is a description for card 4.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/card5.jpg" alt="Card Image 5">
+                            <img src="img/img5.jpeg" alt="Card Image 5">
                             <div class="card-content">
                                 <h3 class="card-title">Retweeted and recognised by the official handle of UN SDG 2030</h3>
-                                <p class="card-text">This is a description for card 5.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/card6.jpg" alt="Card Image 6">
+                            <img src="img/img6.jpeg" alt="Card Image 6">
                             <div class="card-content">
                                 <h3 class="card-title">Presented Project Surya on Wall Street</h3>
-                                <p class="card-text">This is a description for card 6.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/card7.jpg" alt="Card Image 7">
+                            <img src="img/img7.jpeg" alt="Card Image 7">
                             <div class="card-content">
                                 <h3 class="card-title">Women Icon Award - Rotary, Chief Guest of Honour - District Conference Innerhweel,
                                     pitched Project Surya</h3>
-                                <p class="card-text">This is a description for card 7.</p>
                             </div>
                         </div>
                         
@@ -355,7 +349,7 @@
             <!-- Cards Section End -->
 
                 <!-- ##### New Section Start ##### -->
-    <section style="background-image: url('img/backgrounds/new-section-bg.jpg'); background-size: cover; background-position: center;" class="new-section section-padding-100-0">
+    <section style="background-image: url('img/backgrounds/new-section-bg.jpg'); background-size: cover; background-position: center; background-color: #241b12" class="new-section section-padding-100-0">
         <div class="container2">
             <div class="row2">
                 <div class="col-12">
@@ -369,65 +363,148 @@
             </div>
             <div class="card-container2">
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 1">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRigW6j0XT27yRwtC9Fl9BwqJEsg6JN20ngw&s alt="Card 1">
                     <div class="card-content2">
                         <h3 class="card-title2">The Hindu (Daily)</h3>
-                        <p class="card-text2">Description of Card 1</p>
+                       
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 2">
+                    <img src=https://static.wikia.nocookie.net/logopedia/images/d/d7/TOI_logo.png/revision/latest/scale-to-width-down/250?cb=20210602200623 alt="Card 2">
                     <div class="card-content2">
                         <h3 class="card-title2">The Times of India - Week Magazine</h3>
-                        <p class="card-text2">Description of Card 2</p>
+                       
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 3">
+                    <img src=https://play-lh.googleusercontent.com/Prhy-5MPajJzjrTbvmdlhBTPNTFGtq1J0NTr01Lmzd5OJhfuYdbjmS7mba_uYpU4l0s alt="Card 3">
                     <div class="card-content2">
                         <h3 class="card-title2">Deccan Herald</h3>
-                        <p class="card-text2">Description of Card 3</p>
+                        
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 4">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8fHpJWPqS3z--Jj_7eLnbS9V94AJttrlotw&s alt="Card 4">
                     <div class="card-content2">
                         <h3 class="card-title2">The Hindu Student Edition</h3>
-                        <p class="card-text2">Description of Card 4</p>
+                       
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 5">
+                    <img src=https://mediabrief.com/wp-content/uploads/2022/03/image-RJs-We-Like-logo-MediaBrief-300x300.jpg alt="Card 5">
                     <div class="card-content2">
                         <h3 class="card-title2">Radio Mirchi Morning Show with RJ Jimmy</h3>
-                        <p class="card-text2">Description of Card 5</p>
+                       
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 6">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ-zEE5N8gbzpK9hlwNBi9YIqNREkLXksxIg&s alt="Card 6">
                     <div class="card-content2">
                         <h3 class="card-title2">Social Story</h3>
-                        <p class="card-text2">Description of Card 6</p>
+                       
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 7">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuXsUvY-Jcpg3l0ayQnyY-YHPr6w3lzIAn-w&s alt="Card 7">
                     <div class="card-content2">
                         <h3 class="card-title2">The Better India</h3>
-                        <p class="card-text2">Description of Card 7</p>
+                       
                     </div>
                 </div>
                 <div class="card2">
-                    <img src="img/testNews.jpg" alt="Card 8">
+                    <img src=https://play-lh.googleusercontent.com/bsaBsehyDyocQo3yuLXO8OG5mJOVuyatvZgVD4T649ia_r7xf066_K2tFRvNrIu0BA alt="Card 8">
                     <div class="card-content2">
                         <h3 class="card-title2"> Your Story, The Print, India Weekly, South First, Global Indian, Andhra Jyoti Newspaper,
                             Vijay Karnataka and International TV.</h3>
-                        <p class="card-text2">Description of Card 8</p>
+                       
+                    </div>
+                </div>
+                <div class="card2">
+                    <img src="img/Screenshot 2024-07-19 194338.png" alt="Card 8">
+                    <div class="card-content2">
+                        <h3 class="card-title2"> Guiding Young Minds magazine </h3>        
+                    </div>
+                    
+                </div>
+                <div class="card2">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_flZYazeWqPX_2E8Z-ytVcYVE_7yLIKsRig&s alt="Card 8">
+                    <div class="card-content2">
+                        <h3 class="card-title2">  The Big Small Talk Podcast  </h3>        
+                    </div>
+                    
+                </div>
+                
+                <div class="card2">
+                    <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuiAb9aAGj8hW6o1X1WpyttZPt3470goHWaw&s alt="Card 8">
+                    <div class="card-content2">
+                        <h3 class="card-title2"> Femina  </h3>        
+                    </div>
+                    
+                </div>
+                <div class="card2">
+                    <img src=https://i.pinimg.com/originals/d7/08/7e/d7087e7c5909da949c3ad78b12fd4f98.jpg alt="Card 8">
+                    <div class="card-content2">
+                        <h3 class="card-title2"> MamaEarth  </h3>        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="additional-cards-section section-padding-100-0">
+        <div class="container" style="background-color: #241b12;">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center" style="color: white; margin-top: 50px;">Incubated by</h3>
+                    <div class="small-card-container">
+                        <div class="small-card">
+                            <img src=https://clg-storage.s3.amazonaws.com/blog/qFHIs1590220686062 alt="Card Image 1">
+                            <div class="small-card-content">
+                                <h3 class="small-card-title">1M1B </h3>
+                               
+                            </div>
+                        </div>
+                        <div class="small-card">
+                            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ItERhxccFFwTJt-i0KDIzBKvd1LsdGk0Ug&s alt="Card Image 2">
+                            <div class="small-card-content">
+                                <h3 class="small-card-title">International Weserve Foundation</h3>
+                                
+                            </div>
+                        </div>
+                        <div class="small-card">
+                            <img src=https://cdn.freebiesupply.com/logos/large/2x/rotary-international-6-logo-png-transparent.png alt="Card Image 3">
+                            <div class="small-card-content">
+                                <h3 class="small-card-title">Rotary International 
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="small-card">
+                            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKcQfe7pVJ2AC5qxo4KE45sUtOeregt0_xw&s alt="Card Image 4">
+                            <div class="small-card-content">
+                                <h3 class="small-card-title">Innerwheel International 
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="small-card">
+                            <img src=https://media.licdn.com/dms/image/C4D0BAQFQApQTe8Dicg/company-logo_200_200/0/1632245901852/bristlecone_logo?e=2147483647&v=beta&t=Q3HF2adjIqUUjL-0ZQrewHCq2QHL2i6fNJJWhPbadkE alt="Card Image 5">
+                            <div class="small-card-content">
+                                <h3 class="small-card-title">Bristlecone 
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="small-card">
+                            <img src="img/img9.jpeg" alt="Card Image 6">
+                            <div class="small-card-content">
+                                <h3 class="small-card-title">Sudaiva Foundation</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
 
         </div>
