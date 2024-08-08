@@ -6,17 +6,33 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
     <title>Project Surya</title>
-
-    <!-- Favicon -->
     <link rel="icon" href="img/core-img/ProjectSuryaLogo.png">
-
-    <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        /* Custom styles for the lightbox and footer positioning */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+        }
+        .footer-area {
+            background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);
+            padding: 50px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,53 +44,35 @@
         </div>
     </div>
 
-    <!-- ##### Header Area Start ##### -->
+    <!-- Header Area Start -->
     <header class="header-area">
-
-        <!-- ***** Top Header Area ***** -->
         <div class="top-header-area">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: divaauthkarsha24@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="project.surya.info@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: project.surya.info@gmail.com</span></a>
                                 <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: 9741568222</span></a>
                             </div>
-
-                            <!-- Top Header Content -->
-                            <div class="top-header-meta d-flex">
-                                
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ***** Navbar Area ***** -->
         <div class="alazea-main-menu">
             <div class="classy-nav-container breakpoint-off">
                 <div class="container">
-                    <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
-
-                        <!-- Nav Brand -->
                         <a href="index.html" class="nav-brand"><img style="width: 90px; height: 90px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
-
-                        <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
                         </div>
-
-                        <!-- Menu -->
                         <div class="classy-menu">
-
-                            <!-- Close Button -->
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
-
-                            <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
@@ -83,36 +81,26 @@
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="Impact.html">Impact</a>
                                     <li><a href="donate.html">Donate</a>
-
+                                    <li><a href="Awards.html">Awards</a>
                                 </ul>
-
-                              
-
-                               
-
                             </div>
-                            <!-- Navbar End -->
                         </div>
                     </nav>
-
-                    <!-- Search Form -->
                     <div class="search-form">
                         <form action="#" method="get">
                             <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
                             <button type="submit" class="d-none"></button>
                         </form>
-                        <!-- Close Icon -->
                         <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ##### Header Area End ##### -->
+    <!-- Header Area End -->
 
-    <!-- ##### Breadcrumb Area Start ##### -->
+    <!-- Breadcrumb Area Start -->
     <div class="breadcrumb-area">
-        <!-- Top Breadcrumb Area -->
         <div class="top-breadcrumb-area bg-overlay d-flex align-items-center justify-content-center" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);">
             <h2>Gallery</h2>
         </div>
@@ -123,203 +111,36 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Gallery</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- ##### Breadcrumb Area End ##### -->
+    <!-- Breadcrumb Area End -->
 
-    <!-- ##### Portfolio Area Start ##### -->
-    <section class="alazea-portfolio-area portfolio-page section-padding-0-100">
+    <!-- Portfolio Area Start -->
+    <section style="height: 5150px;" class="alazea-portfolio-area portfolio-page section-padding-0-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- Section Heading -->
                     <div class="section-heading text-center">
                         <h2>OUR PORTFOLIO</h2>
                     </div>
                 </div>
             </div>
-        </div>
-
-        
-
-            <div class="row alazea-portfolio">
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image1.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image1.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
-                            <div class="port-hover-text">
-                               
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item garden">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
-                            <div class="port-hover-text">
-                                <h3>Jnana Sanjeevini Group</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image2.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image2.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4">
-                            <div class="port-hover-text">
-                                <h3>Session 1</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image3.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image3.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5">
-                            <div class="port-hover-text">
-                                <h3>Session 1</h3>
-                               
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image4.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image4.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6">
-                            <div class="port-hover-text">
-                                <h3>Session 1</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item home-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image5.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image5.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7">
-                            <div class="port-hover-text">
-                                <h3>Session 1</h3>
-                               
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item design home-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image6.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image6.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
-                            <div class="port-hover-text">
-                                <h3>Session 1</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image7.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image7.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
-                            <div class="port-hover-text">
-                                <h3>Session 2</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image8.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image8.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4">
-                            <div class="port-hover-text">
-                                <h3>Session 2</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image9.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image9.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5">
-                            <div class="port-hover-text">
-                                <h3>Session 2</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                
-
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item home-design">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/image10.png);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/image10.png" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7">
-                            <div class="port-hover-text">
-                                <h3>Reach Out</h3>
-                                
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
+            <div class="row alazea-portfolio" id="gallery-container">
+                <!-- JavaScript will populate this section -->
             </div>
         </div>
     </section>
-    <!-- ##### Portfolio Area End ##### -->
+    <!-- Portfolio Area End -->
+
+    <!-- Lightbox for image preview -->
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
 
     <footer class="footer-area" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);">        <!-- Main Footer Area -->
         <div class="main-footer-area">
@@ -332,11 +153,11 @@
                                 <a href="#"><img style="height: 100px; width: 100px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
                             </div>
                             <div class="social-info">
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                
+                                <a href="https://x.com/project_surya_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                               
+                                <a href="https://www.instagram.com/project_surya_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/projectsurya/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -351,7 +172,11 @@
                             <div class="contact-information">
                                 
                                 <p><span>Phone:</span> 9741568222</p>
-                                <p><span>Email:</span> divaauthkarsha24@gmail.com</p>
+                                <p><span>Email:</span> project.surya.info@gmail.com</p>
+                                <p>Website created by YOTI: Youth Opportunities in Tech Innovations</p>
+                                <li style="color: white;"><a style="color: white;" href="https://www.instagram.com/texasyoti/" target="_blank">Visit Instagram for YOTI</a></li>
+<li style="color: white;"><a style="color: white;" href="https://www.linkedin.com/company/youth-opportunities-in-tech-innovation/about/" target="_blank">Visit LinkedIn for YOTI</a></li>
+
                                
                             </div>
                         </div>
@@ -360,17 +185,58 @@
             </div>
         </div>
 
-    <!-- ##### All Javascript Files ##### -->
-    <!-- jQuery-2.2.4 js -->
+    <!-- All Javascript Files -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
     <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
     <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
     <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryContainer = document.getElementById('gallery-container');
+            const imageFolder = 'img/gallery/';
+            const totalImages = 60;
+
+            for (let i = 1; i <= totalImages; i++) {
+                const imgSrc = `${imageFolder}g${i}.jpeg`;
+                const colDiv = document.createElement('div');
+                colDiv.className = 'col-12 col-sm-6 col-lg-3 single_portfolio_item';
+
+                const portfolioThumbnailDiv = document.createElement('div');
+                portfolioThumbnailDiv.className = 'portfolio-thumbnail bg-img';
+                portfolioThumbnailDiv.style.backgroundImage = `url(${imgSrc})`;
+
+                const portfolioHoverOverlayDiv = document.createElement('div');
+                portfolioHoverOverlayDiv.className = 'portfolio-hover-overlay';
+
+                const anchor = document.createElement('a');
+                anchor.href = imgSrc;
+                anchor.className = 'portfolio-img d-flex align-items-center justify-content-center';
+                anchor.title = `Portfolio ${i}`;
+
+                anchor.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const lightbox = document.getElementById('lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+                    lightboxImg.src = imgSrc;
+                    lightbox.style.display = 'flex';
+                });
+
+                portfolioHoverOverlayDiv.appendChild(anchor);
+                portfolioThumbnailDiv.appendChild(portfolioHoverOverlayDiv);
+                colDiv.appendChild(portfolioThumbnailDiv);
+                galleryContainer.appendChild(colDiv);
+            }
+
+            // Close lightbox when clicking outside the image
+            document.getElementById('lightbox').addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
