@@ -32,6 +32,16 @@
             background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);
             padding: 50px 0;
         }
+
+        .test {
+            height: 5180px;
+        }
+
+        @media (max-width: 768px) {
+            .test {
+                height: 20200px;
+            }
+        }
     </style>
 </head>
 
@@ -75,13 +85,13 @@
                             </div>
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="contact.html">Contact</a></li>       
+                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="Impact.html">Impact</a>
+                                    <li><a href="gallery.html">Gallery</a></li>
                                     <li><a href="donate.html">Donate</a>
-                                    <li><a href="Awards.html">Awards</a>
+                                    <li><a href="contact.html">Contact</a></li>       
+                                    <li><a href="Awards.html">Recognition and Media</a>
                                 </ul>
                             </div>
                         </div>
@@ -121,7 +131,7 @@
     <!-- Breadcrumb Area End -->
 
     <!-- Portfolio Area Start -->
-    <section style="height: 5150px;" class="alazea-portfolio-area portfolio-page section-padding-0-100">
+    <section class="alazea-portfolio-area test portfolio-page section-padding-0-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -135,6 +145,9 @@
             </div>
         </div>
     </section>
+    
+    
+    
     <!-- Portfolio Area End -->
 
     <!-- Lightbox for image preview -->
@@ -152,6 +165,9 @@
                             <div class="footer-logo mb-30">
                                 <a href="#"><img style="height: 100px; width: 100px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
                             </div>
+                            <p>Like our work? 
+                                Spread the word. 
+                                </p>
                             <div class="social-info">
                                 
                                 <a href="https://x.com/project_surya_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -198,7 +214,7 @@
             const imageFolder = 'img/gallery/';
             const totalImages = 60;
 
-            for (let i = 1; i <= totalImages; i++) {
+            for (let i = 2; i <= totalImages; i++) {
                 const imgSrc = `${imageFolder}g${i}.jpeg`;
                 const colDiv = document.createElement('div');
                 colDiv.className = 'col-12 col-sm-6 col-lg-3 single_portfolio_item';
