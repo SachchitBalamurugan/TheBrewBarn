@@ -88,7 +88,8 @@
     flex-direction: column; /* Align items vertically */
     
 }
-    
+
+
 .container2 {
     display: flex;
     flex-direction: column; /* Align items vertically */
@@ -228,6 +229,27 @@ input:checked + label .description {
     animation-delay: 15s; /* Ensure this delay is correct */
 }
 
+@media (max-width: 768px) {
+    .card {
+        width: 50%; /* Ensure the card takes full width on mobile */
+        max-width: none; /* Remove max-width constraint */
+        margin: 10px 0; /* Adjust margin for vertical spacing */
+        height: auto; /* Allow height to adjust based on content */
+        display: block; /* Ensure display block to stack elements vertically */
+    }
+
+    .description {
+        opacity: 1 !important; /* Ensure description is always visible */
+        transform: translateY(0) !important; /* Reset transformation for mobile */
+        height: auto; /* Adjust height to fit content */
+        width: 100%; /* Ensure full width */
+    }
+    
+    input:checked + label {
+        width: 60%;
+    }
+}
+    
 
 </style>
 
