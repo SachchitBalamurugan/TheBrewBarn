@@ -752,7 +752,7 @@ you can use the generic selector below, but it's slower:
 .icon_pause_alt:before {
 	content: "\e08f";
 }
-.icon_phone:before {
+.icon_before {
 	content: "\e090";
 }
 .icon_upload:before {
