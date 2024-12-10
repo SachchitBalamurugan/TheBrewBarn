@@ -12,7 +12,7 @@
     <title>The Brew Barn</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logoB.png">
+    <link rel="icon" href="img/logoBc.png">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -190,10 +190,15 @@
                             <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="shop.html">Shop</a>
+                                        <ul class="dropdown">
+                                            <li><a href="shop.html">Coffee</a></li>
+                                            <li><a href="Merchandise.html">Merchandise</a></li>
+                                            <li><a href="BrewingSupplies.html">Brewing Supplies</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="about.html">Subscriptions</a></li>
-                                    <li><a href="Impact.html">Learn</a>
-                                    <li><a href="gallery.html">Order Ahead</a></li>
+                                    <li><a href="Impact.html">Order Ahead</a>
                                 </ul>
 
                               
@@ -546,55 +551,55 @@
     }
 </style>
 
+<style>
+    .footer-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0; /* Optional padding for spacing */
+    position: relative;
+}
 
+.main-footer-area {
+    width: 100%;
+    max-width: 1200px; /* Optional: Controls max width of footer */
+}
+
+.single-footer-widget {
+    text-align: center; /* Centers content inside the widget */
+}
+
+.social-info a {
+    margin: 0 10px; /* Adjust spacing between social icons */
+}
+
+</style>    
     
     
-    <footer class="footer-area" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);">        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row">
-                    <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-6">
-                        <div class="single-footer-widget">
-                            <div class="footer-logo mb-30">
-                                <a href="#"><img style="height: 100px; width: 100px;" src="img/logoB.png" alt=""></a>
-                            </div>
-                            <p>Like our work? 
-                                Spread the word. 
-                                </p>
-                            <div class="social-info">
-                                
-                                <a href="https://x.com/project_surya_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                               
-                                <a href="https://www.instagram.com/project_surya_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="https://www.linkedin.com/company/projectsurya/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                            </div>
+     
+<footer class="footer-area" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);;">
+    <div class="main-footer-area">
+        <div class="container">
+            <div class="row justify-content-center"> <!-- Add this class to center the content -->
+                <div class="col-12 col-sm-6 col-lg-6">
+                    <div class="single-footer-widget">
+                        <div class="footer-logo mb-30">
+                            <a href="#"><img style="height: 100px; width: 100px;" src="img/logoBc.png" alt=""></a>
                         </div>
-                    </div>
-    
-                    <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-6">
-                        <div class="single-footer-widget">
-                            <div class="widget-title">
-                                <h5>CONTACT</h5>
-                            </div>
-    
-                            <div class="contact-information">
-                                
-                                
-                                <p><span>Email:</span> project.surya.info@gmail.com</p>
-                                <hr style="border: 1px solid white; margin: 10px 0;">
-                                <p>Website created by YOTI: Youth Opportunities in Tech Innovations</p>
-                                <li style="color: white;"><a style="color: white;" href="https://www.instagram.com/texasyoti/" target="_blank">Visit Instagram for YOTI</a></li>
-<li style="color: white;"><a style="color: white;" href="https://www.linkedin.com/company/youth-opportunities-in-tech-innovation/about/" target="_blank">Visit LinkedIn for YOTI</a></li>
-
-                               
-                            </div>
+                        <p>Have Questions? Contact Us</p>
+                        <p><span>Email:</span> thebrewbarn@gmail.com</p>
+                        <div class="social-info">
+                            <a href="https://x.com/project_surya_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/project_surya_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/projectsurya/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</footer>
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
