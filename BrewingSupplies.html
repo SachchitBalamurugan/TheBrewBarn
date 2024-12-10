@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>The Brew Barn</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/logoBc.png">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .coffee-card {
+            width: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .coffee-card:hover {
+            transform: scale(1.05);
+        }
+        .coffee-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .coffee-card .details {
+            padding: 15px;
+        }
+        .coffee-card .name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .coffee-card .price {
+            font-size: 16px;
+            color: #f39c12;
+            margin: 10px 0;
+        }
+        .coffee-card .buy-button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .coffee-card .buy-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .modal .close:hover {
+            color: black;
+        }
+    </style>
+
+    <style>        
+    .stat {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #F3E5F5;
+        border-left: 5px solid #6D4C41;
+        border-radius: 4px;
+    }
+
+    .stat .label {
+        font-weight: bold;
+        color: #5D4037;
+    }
+
+    .stat .value {
+        font-size: 1.2em;
+        color: #6D4C41;
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="img/core-img/sun.png" alt="">
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- ***** Top Header Area ***** -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
+                             
+
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta d-flex">
+                                <!-- Language Dropdown -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu" style="height: 120px;">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                        <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"><img style="width: 300px; height: 90px;" src="img/logoB.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="shop.html">Shop</a>
+                                        <ul class="dropdown">
+                                            <li><a href="shop.html">Coffee</a></li>
+                                            <li><a href="Merchandise.html">Merchandise</a></li>
+                                            <li><a href="BrewingSupplies.html">Brewing Supplies</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="about.html">Subscriptions</a></li>
+                                    <li><a href="Impact.html">Order Ahead</a>
+                                </ul>
+
+                              
+                            </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <!-- Close Icon -->
+                        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-post-slides owl-carousel">
+
+            <!-- Single Hero Post -->
+            <div class="single-hero-post bg-overlay" style="height: 500px;">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url('img/bg2.jpg');"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <div>
+                                    <h1 style="font-size: 3rem; letter-spacing: 2px; margin: 0; color: white;">SHOP SUPPLIES</h1>
+                                    <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; color: white; border-bottom: 2px solid #00bcd4; text-decoration: none; font-weight: bold;">VIEW COLLECTION</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+    </section>
+     <!-- Hero Section -->
+       
+    </section>
+
+    <!-- Product Grid Section -->
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; background-color: #f9f9f9;">
+        <!-- Products -->
+        <!-- Use img/c1.png, img/c2.png, img/c3.png, img/c4.png -->
+        <div style="text-align: center; background: white; border: 1px solid #ddd; padding: 20px; border-radius: 5px; transition: transform 0.2s;">
+            <img src="img/br1.png" alt="Coffee 1" style="max-width: 100%; border-radius: 5px;">
+            <h2 style="font-size: 1.2rem; margin: 10px 0;">Coffee Beans</h2>
+            <p style="font-size: 1rem; color: #333;">from <span style="font-weight: bold; color: #00bcd4;">$15.50</span></p>
+            <button class="buy-button" onclick="openModal('Coffee 1', 'Coffee Beans', '$15.00', 'img/br1.png')">Buy</button>
+        </div>
+        <div style="text-align: center; background: white; border: 1px solid #ddd; padding: 20px; border-radius: 5px; transition: transform 0.2s;">
+            <img src="img/br2.png" alt="Coffee 2" style="max-width: 100%; border-radius: 5px;">
+            <h2 style="font-size: 1.2rem; margin: 10px 0;">Measuring Cup</h2>
+            <p style="font-size: 1rem; color: #333;">from <span style="font-weight: bold; color: #00bcd4;">$15.50</span></p>
+            <button class="buy-button" onclick="openModal('Coffee 2', 'Measuring Cup', '$15.50', 'img/c2.png')">Buy</button>
+        </div>
+        <div style="text-align: center; background: white; border: 1px solid #ddd; padding: 20px; border-radius: 5px; transition: transform 0.2s;">
+            <img src="img/br3.png" alt="Coffee 3" style="max-width: 100%; border-radius: 5px;">
+            <h2 style="font-size: 1.2rem; margin: 10px 0;">Small Measuring Cup</h2>
+            <p style="font-size: 1rem; color: #333;">from <span style="font-weight: bold; color: #00bcd4;">$16.00</span></p>
+            <button class="buy-button" onclick="openModal('Coffee 3', 'Small Measuring Cup', '$16.00', 'img/c3.png')">Buy</button>
+        </div>
+        <div style="text-align: center; background: white; border: 1px solid #ddd; padding: 20px; border-radius: 5px; transition: transform 0.2s;">
+            <img src="img/br4.png" alt="Coffee 4" style="max-width: 100%; border-radius: 5px;">
+            <h2 style="font-size: 1.2rem; margin: 10px 0;">Pouring Cup</h2>
+            <p style="font-size: 1rem; color: #333;">from <span style="font-weight: bold; color: #00bcd4;">$17.00</span></p>
+            <button class="buy-button" onclick="openModal('Coffee 4', 'Pouring Cup', '$17.00', 'img/c4.png')">Buy</button>
+        </div>
+        <!-- Repeat with alternating images -->
+        <div style="text-align: center; background: white; border: 1px solid #ddd; padding: 20px; border-radius: 5px; transition: transform 0.2s;">
+            <img src="img/br5.png" alt="Coffee 5" style="max-width: 100%; border-radius: 5px;">
+            <h2 style="font-size: 1.2rem; margin: 10px 0;">Coffee Glass</h2>
+            <p style="font-size: 1rem; color: #333;">from <span style="font-weight: bold; color: #00bcd4;">$15.75</span></p>
+            <button class="buy-button" onclick="openModal('Coffee 5', 'Coffee Glass', '$15.75', 'img/c1.png')">Buy</button>
+        </div>
+       
+        
+        <!-- Continue for 20 coffees -->
+    </section>
+    
+    <div style="width: 100%; background: url('img/bg2.jpg') no-repeat center center; background-size: cover; display: flex; justify-content: center; align-items: center; text-align: center; padding: 20px; border-radius: 5px; transition: transform 0.2s;">
+        <div>
+            <h1 style="font-size: 3rem; letter-spacing: 2px; margin: 0; color: white;">View Subscriptions</h1>
+            <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; color: white; border-bottom: 2px solid #00bcd4; text-decoration: none; font-weight: bold;">VIEW COLLECTION</a>
+        </div>
+    </div>
+    
+    <!-- Modal Structure -->
+<div id="coffeeModal" class="modal" >
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="coffeeName"></h2>
+        <img id="coffeeImage" src="" alt="Coffee" style="max-width: 100%; border-radius: 5px; margin-bottom: 20px;">
+        <p id="coffeePrice"></p>
+
+        <!-- Coffee Customization Form -->
+        <form id="coffeeForm">
+            <label for="sugarAmount">Amount of Sugar:</label>
+            <select id="sugarAmount">
+                <option value="None">None</option>
+                <option value="1 tsp">1 tsp</option>
+                <option value="2 tsp">2 tsp</option>
+                <option value="3 tsp">3 tsp</option>
+            </select><br><br>
+
+            <label for="shots">Number of Shots:</label>
+            <select id="shots">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br><br>
+
+            <label for="whippedCream">Whipped Cream:</label>
+            <select id="whippedCream">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select><br><br>
+
+            <label for="orderType">Delivery or Pickup:</label>
+            <select id="orderType">
+                <option value="Pickup">Pickup</option>
+                <option value="Delivery">Delivery</option>
+            </select><br><br>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter your location"><br><br>
+
+            <!-- Fake purchase button -->
+            <button type="button" onclick="fakePurchase()">Checkout</button>
+        </form>
+
+        <!-- Checkout Area (Hidden initially) -->
+        <div class="checkout_area mb-100" id="checkoutArea" style="display: none;">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-7">
+                        <div class="checkout_details_area clearfix">
+                            <h5>Billing Details</h5>
+                            <form action="#" method="post">
+                                <!-- Billing form fields here... -->
+                                <form action="#" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <label for="first_name">First Name *</label>
+                                            <input type="text" class="form-control" id="first_name" value="" required>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="last_name">Last Name *</label>
+                                            <input type="text" class="form-control" id="last_name" value="" required>
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <label for="email_address">Email Address *</label>
+                                            <input type="email" class="form-control" id="email_address" value="">
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <label for="phone_number">Phone Number *</label>
+                                            <input type="number" class="form-control" id="phone_number" min="0" value="">
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <label for="company">Company Name</label>
+                                            <input type="text" class="form-control" id="company" value="">
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <label for="company">Address *</label>
+                                            <input type="text" class="form-control" id="address" value="">
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="city">Town/City *</label>
+                                            <input type="text" class="form-control" id="city" value="">
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="state">State/Province *</label>
+                                            <input type="text" class="form-control" id="state" value="">
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="country">Country</label>
+                                            <select class="custom-select d-block w-100" id="country">
+                                                <option value="usa">United States</option>
+                                                <option value="uk">United Kingdom</option>
+                                                <option value="ger">Germany</option>
+                                                <option value="fra">France</option>
+                                                <option value="ind">India</option>
+                                                <option value="aus">Australia</option>
+                                                <option value="bra">Brazil</option>
+                                                <option value="cana">Canada</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="postcode">Postcode/Zip</label>
+                                            <input type="text" class="form-control" id="postcode" value="">
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <label for="order-notes">Order Notes</label>
+                                            <textarea class="form-control" id="order-notes" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="d-flex align-items-center">
+                                                <!-- Single Checkbox -->
+                                                <div class="custom-control custom-checkbox d-flex align-items-center mr-30">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Ship to a different address?</label>
+                                                </div>
+                                                <!-- Single Checkbox -->
+                                                <div class="custom-control custom-checkbox d-flex align-items-center">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                    <label class="custom-control-label" for="customCheck2">Create an account?</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="buyButton" onclick="finalizePurchase()" style="display: none; margin-top: 20px; padding: 10px 20px; background-color: #00bcd4; color: white; border: none; border-radius: 5px;">Buy Now</button>
+        
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+    function openModal(name, blend, price, image) {
+        // Set modal content
+        document.getElementById("coffeeName").innerText = name + " - " + blend;
+        document.getElementById("coffeePrice").innerText = price;
+        document.getElementById("coffeeImage").src = image;
+
+        // Show modal
+        document.getElementById("coffeeModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("coffeeModal").style.display = "none";
+    }
+
+    function fakePurchase() {
+        // After clicking proceed to checkout, hide form and show checkout area
+        document.getElementById("coffeeForm").style.display = "none";
+        document.getElementById("checkoutArea").style.display = "block";  // Show the checkout area
+        document.getElementById("buyButton").style.display = "inline-block";  // Show the Buy Now button
+    }
+
+    function finalizePurchase() {
+        // Display alert on final purchase
+        alert("Thank you for your purchase!");
+        closeModal();  // Close the modal after purchase
+    }
+</script>
+
+
+<!-- Style for Modal -->
+<style>
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 10; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+    }
+
+    /* Styling for buttons */
+    button, .buy-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        background-color: #00bcd4; /* Light blue color */
+        color: white;
+        border: none;
+        border-radius: 30px; /* Rounded edges */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding subtle shadow */
+    }
+
+    button:hover, .buy-button:hover {
+        background-color: #008c99; /* Darker shade on hover */
+        transform: scale(1.05); /* Slight scale effect on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    }
+
+    /* Optional: Add a hover effect for the close button */
+    .close:hover {
+        color: #00bcd4; /* Match the button color */
+        transform: rotate(90deg); /* Slight rotation effect */
+    }
+</style>
+
+<style>
+    .footer-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0; /* Optional padding for spacing */
+    position: relative;
+}
+
+.main-footer-area {
+    width: 100%;
+    max-width: 1200px; /* Optional: Controls max width of footer */
+}
+
+.single-footer-widget {
+    text-align: center; /* Centers content inside the widget */
+}
+
+.social-info a {
+    margin: 0 10px; /* Adjust spacing between social icons */
+}
+
+</style>    
+    
+    
+     
+<footer class="footer-area" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);;">
+    <div class="main-footer-area">
+        <div class="container">
+            <div class="row justify-content-center"> <!-- Add this class to center the content -->
+                <div class="col-12 col-sm-6 col-lg-6">
+                    <div class="single-footer-widget">
+                        <div class="footer-logo mb-30">
+                            <a href="#"><img style="height: 100px; width: 100px;" src="img/logoBc.png" alt=""></a>
+                        </div>
+                        <p>Have Questions? Contact Us</p>
+                        <p><span>Email:</span> thebrewbarn@gmail.com</p>
+                        <div class="social-info">
+                            <a href="https://x.com/project_surya_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/project_surya_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/projectsurya/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>
