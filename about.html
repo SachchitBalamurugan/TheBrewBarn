@@ -9,14 +9,126 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-     <!-- Title -->
-     <title>Project Surya</title>
+    <title>The Brew Barn</title>
 
-     <!-- Favicon -->
-     <link rel="icon" href="img/core-img/ProjectSuryaLogo.png">
+    <!-- Favicon -->
+    <link rel="icon" href="img/logoB.png">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .coffee-card {
+            width: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .coffee-card:hover {
+            transform: scale(1.05);
+        }
+        .coffee-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .coffee-card .details {
+            padding: 15px;
+        }
+        .coffee-card .name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .coffee-card .price {
+            font-size: 16px;
+            color: #f39c12;
+            margin: 10px 0;
+        }
+        .coffee-card .buy-button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .coffee-card .buy-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .modal .close:hover {
+            color: black;
+        }
+    </style>
+
+    <style>        
+    .stat {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #F3E5F5;
+        border-left: 5px solid #6D4C41;
+        border-radius: 4px;
+    }
+
+    .stat .label {
+        font-weight: bold;
+        color: #5D4037;
+    }
+
+    .stat .value {
+        font-size: 1.2em;
+        color: #6D4C41;
+    }
+</style>
 
 </head>
 
@@ -38,6 +150,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
                              
 
                             <!-- Top Header Content -->
@@ -59,7 +172,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="#"><img style="height: 90px; width: 90px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img style="width: 300px; height: 90px;" src="img/logoB.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -77,20 +190,13 @@
                             <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
-                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="Impact.html">Impact</a>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="donate.html">Donate</a>
-                                    <li><a href="contact.html">Contact</a></li>       
-                                    <li><a href="Awards.html">Recognition and Media</a>
-                                   
-
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="about.html">Subscriptions</a></li>
+                                    <li><a href="Impact.html">Learn</a>
+                                    <li><a href="gallery.html">Order Ahead</a></li>
                                 </ul>
 
                               
-
-                               
                             </div>
                             <!-- Navbar End -->
                         </div>
@@ -110,273 +216,202 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-    
 
-    <!-- ##### Breadcrumb Area Start ##### -->
-    <div style="background-color: #6b1212;" class="breadcrumb-area">
-        <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/img16.jpeg);">
-            <h2>ABOUT US</h2>
-        </div>
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-post-slides owl-carousel">
 
-
-    </div>
-    <!-- ##### Breadcrumb Area End ##### -->
-
-    <!-- ##### Project Surya Section Start ##### -->
-    <section style="position: relative;position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    background-image: url('img/img15.png');
-    background-size: cover; /* Cover the entire section */
-    background-position: center 25%; /* Center the image */
-    background-repeat: no-repeat; /* Prevent image repetition */
-" class="project-surya-section section-padding-100-0">
-<div style="
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.7); /* Black overlay with 50% opacity */
-z-index: 0; /* Ensure the overlay is above the background image */
-"></div>
-
-        <div class="container" style="z-index: 2;">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2 style="color: white; font-weight: bold;">Project Surya</h2>
-                        <p style="color: white;">A Global Student Led Movement Championing UNSDG 3 - Good Health and Well Being</p>
+            <!-- Single Hero Post -->
+            <div class="single-hero-post bg-overlay" style="height: 500px;">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url('img/bg2.jpg');"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <div>
+                                    <h1 style="font-size: 3rem; letter-spacing: 2px; margin: 0; color: white;">Enjoy Your Favorite Coffee Every Month with Our Subscription Plans</h1>
+                                    <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; color: white; border-bottom: 2px solid #00bcd4; text-decoration: none; font-weight: bold;">VIEW SUBSCRIPTIONS</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="project-surya-content text-center"> <!-- Added text-center class here -->
-                        <p style="color: white; font-size: 20px;">We envision a world where good health and well-being are made accessible, affordable and
-                            available to everyone, including millions of T1 diabetics globally.
-                            Our mission is to ensure that every child with T1 diabetes achieves their best state of health
-                            through positive aid and timely intervention.
-                            Our goal is to make quality insulin and diabetes management resources like strips and syringes
-                            accessible to people of all social and financial backgrounds and to ensure that accurate
-                            knowledge and awareness are made easily available along with diabetes-friendly policies at the
-                            advocacy level.</p>
-                        
-                    </div>
-                </div>
-            </div>
+            
+
+            
+    </section>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 50vh; background-color: #041833; color: #ffffff; font-family: 'Arial', sans-serif; padding: 0 5%;">
+        <!-- Left Section: Image -->
+       
+        <!-- Right Section: Text Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+          <h1 style="font-size: 2em; margin-bottom: 10px; color: gold;">SAVOR THE SEASON</h1>
+          <p style="font-size: 1em; margin-bottom: 30px; max-width: 80%; color: white;">
+            Celebrate the art of coffee with our expertly curated subscriptions. From bold single-origin roasts to comforting seasonal blends, each selection is handpicked to elevate your coffee experience and delivered fresh to your doorstep. Explore the joy of flavors crafted just for you.
+        </p>
+        
+          
         </div>
-        <div class="background-animation"></div> <!-- Added background-animation div -->
+      </div>
+    <!-- Subscriptions Section -->
+    <section style="padding: 20px; background-color: #f9f9f9;">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <button class="tab-button" onclick="showSubscriptions('all')">All</button>
+            <button class="tab-button" onclick="showSubscriptions('popular')">Popular</button>
+            <button class="tab-button" onclick="showSubscriptions('classic')">Classic Blends</button>
+            <button class="tab-button" onclick="showSubscriptions('holiday')">Holiday Specials</button>
+        </div>
+        <div id="subscriptions-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Dynamic content will be inserted here -->
+        </div>
     </section>
     
-<!-- ##### Project Surya Section End ##### -->
-<section style="background-color: #241B12;" class="our-services-area section-padding-100-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="row justify-content-between">
-                    <div class="col-12 col-lg-5">
-                        <div class="alazea-service-area mb-100">
-                            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
-                                <!-- Content -->
-                                <div class="service-content">
-                                </div>
-                            </div>
-
-                            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms" style="margin-bottom: 10px;">
-                                
-                                <div class="service-content">
-                                    <h5 style="color: white; margin-bottom: 5px; margin-bottom: 20px; font-size: 30px;">Who Are We</h5>
-                                    <p style="color: white; margin-bottom: 5px; margin-bottom: 20px;">Project Surya is an internationally recognized, entirely youth-led non-profit based in India but
-                                        present globally, aiming to empower T1 diabetic adolescents from underprivileged and remote
-                                        communities. We have a three-pronged action plan that covers awareness, advocacy and funding</p>
-                                    <h5 style="color: white; margin-bottom: 5px; margin-bottom: 20px; font-size: 30px">Vision, Mission and Goal</h5>
-                                    <p style="color: white; margin-bottom: 5px; margin-bottom: 20px;">We envision a world where good health and well-being are made accessible, affordable and
-                                        available to everyone, including millions of T1 diabetics globally.
-                                        Our mission is to ensure that every child with T1 diabetes achieves their best state of health
-                                        through positive aid and timely intervention.
-                                        Our goal is to make quality insulin and diabetes management resources like strips and syringes
-                                        accessible to people of all social and financial backgrounds and to ensure that accurate
-                                        knowledge and awareness are made easily available along with diabetes-friendly policies at the
-                                        advocacy level.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Image -->
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <img src="img/img13.jpeg" alt="Your Image" style="max-width: 500px; height: 500px; border-radius: 50%; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
-                    </div>
-                    <!-- End of Image -->
-                </div>
-            </div>
+    <script>
+        // Data for subscriptions
+        const subscriptions = {
+            all: [
+                { title: "Monthly Brew", price: "$19.99/month", details: "A curated selection of our finest blends delivered monthly.", image: "img/c1.png" },
+                { title: "Barista's Choice", price: "$29.99/month", details: "Premium single-origin roasts and seasonal specials.", image: "img/c2.png" },
+                { title: "Holiday Cheer", price: "$24.99/month", details: "Special holiday-themed blends to warm your winter days.", image: "img/c3.png" },
+                { title: "Classic Roast", price: "$19.99/month", details: "Traditional blends for the coffee purist.", image: "img/c4.png" },
+            ],
+            popular: [
+                { title: "Monthly Brew", price: "$19.99/month", details: "A curated selection of our finest blends delivered monthly.", image: "img/c1.png" },
+                { title: "Barista's Choice", price: "$29.99/month", details: "Premium single-origin roasts and seasonal specials.", image: "img/c2.png" },
+            ],
+            classic: [
+                { title: "Classic Roast", price: "$19.99/month", details: "Traditional blends for the coffee purist.", image: "img/c4.png" },
+            ],
+            holiday: [
+                { title: "Holiday Cheer", price: "$24.99/month", details: "Special holiday-themed blends to warm your winter days.", image: "img/c3.png" },
+            ],
+        };
+    
+        // Function to update subscriptions content
+        function showSubscriptions(category) {
+            const container = document.getElementById("subscriptions-container");
+            container.innerHTML = ""; // Clear existing content
+            subscriptions[category].forEach((subscription, index) => {
+                const card = document.createElement("div");
+                card.style = "text-align: center; background: white; border: 1px solid #ddd; padding: 20px; border-radius: 5px; transition: transform 0.2s;";
+                card.innerHTML = `
+                    <img src="${subscription.image}" alt="${subscription.title}" style="max-width: 100%; border-radius: 5px;">
+                    <h2 style="font-size: 1.2rem; margin: 10px 0;">${subscription.title}</h2>
+                    <p style="font-size: 1rem; color: #333;">${subscription.price}</p>
+                    <p style="font-size: 0.9rem; color: #666;">${subscription.details}</p>
+                    <button id="openModal-${index}" class="buy-button" style="padding: 10px 20px; background-color: #00bcd4; color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe Now</button>
+                `;
+                container.appendChild(card);
+    
+                // Add event listener for dynamically created button
+                document.getElementById(`openModal-${index}`).addEventListener("click", function () {
+                    document.getElementById("subscriptionModal").style.display = "flex";
+                });
+            });
+        }
+    
+        // Load the "All" category by default
+        document.addEventListener("DOMContentLoaded", () => showSubscriptions("all"));
+    </script>
+    
+    <!-- Modal for Subscription -->
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Select Your Subscription</h2>
+            <p>Choose from our exclusive plans and enjoy premium coffee every month.</p>
+            <button class="buy-button" id="buyButton">Buy Subscription</button>
         </div>
     </div>
-</section>
-
-<!-- ##### Project Surya Section End ##### -->
-<section style="background-color: #2e2822;" class="our-services-area section-padding-100-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="row justify-content-between">
-                    <div class="col-12 col-lg-5">
-                        <div class="alazea-service-area mb-100">
-                            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
-                                <!-- Content -->
-                                <div class="service-content">
-                                </div>
-                                <h1 style="color: white;">Our Story</h1>
-                            </div>
-
-                            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms" style="margin-bottom: 10px;">
-                                
-                                <div class="service-content">
-                                    <p style="color: white; margin-bottom: 5px; margin-bottom: 20px;">Started by our founder and CEO Divaa Uthkarsha in 2021, Project Surya aims to make good
-                                        health and well-being accessible, affordable and available to everyone. Divaa’s younger brother
-                                        Surya was diagnosed with T1 diabetes, and after observing first-hand how challenging the
-                                        process could be - from accepting the shocking diagnosis, processing that you will have to live
-                                        with it for the rest of your life, thinking about the added financial constraints and burden on the
-                                        family and also societal taboos, misconceptions, lack of knowledge and taunts - receiving a T1
-                                        diabetes diagnosis is hard. This got to Divaa, she started thinking about the less-privileged kids
-                                        who had the same condition as her brother. By seeing firsthand the work, money, and family
-                                        support needed to effectively manage the disease, Divaa wondered what it must be like for
-                                        underprivileged children suffering from T1D. She realized how unfair the world can be. How can
-                                        these low-income uneducated families afford to spend more than 70% of their income on
-                                        out-of-pocket expenditure for diabetes?</p>
-                                    <p style="color: white; margin-bottom: 5px; margin-bottom: 20px;">Overcome with a sudden motivation, Divaa made a decision, she would do whatever she could to
-                                        make sure that all children with T1 diabetes can dream big, just like any other child. Hence she
-                                        started Project Surya in Bangalore, India- in the name of her younger brother. “Surya” in the
-                                        Kannada language means the Sun, and we want to brighten as many lives just like the Sun does.
-                                        We are now led by young people from all over the world from 13 cities and 5 countries.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Image -->
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <img src="img/img12.jpeg" alt="Your Image" style="max-width: 500px; height: 500px; border-radius: 50%; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
-                    </div>
-                    <!-- End of Image -->
-                </div>
-            </div>
+    
+    <script>
+        // Close the modal
+        document.getElementById("closeModal").addEventListener("click", function () {
+            document.getElementById("subscriptionModal").style.display = "none";
+        });
+    
+        // Alert when the Buy button is clicked
+        document.getElementById("buyButton").addEventListener("click", function () {
+            alert("Subscription purchased successfully!");
+            document.getElementById("subscriptionModal").style.display = "none";
+        });
+    
+        // Close the modal if the user clicks outside it
+        window.addEventListener("click", function (event) {
+            const modal = document.getElementById("subscriptionModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    
+    <style>
+        .tab-button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #00bcd4;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .tab-button:hover {
+            background-color: #0198a1;
+        }
+        .subscribe-button:hover {
+            background-color: #01897b;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100vh; background-color: #041833; color: #ffffff; font-family: 'Arial', sans-serif; padding: 0 5%;">
+        <!-- Left Section: Image -->
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <img src="img/extra1.jpg" alt="Coffee Image" style="max-width: 100%; height: 500px; border-radius: 10px;">
+        </div>
+      
+        <!-- Right Section: Text Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <h1 style="font-size: 2em; margin-bottom: 10px; color: gold;">MORE WAYS TO INDULGE</h1>
+            <p style="font-size: 1em; margin-bottom: 30px; max-width: 80%; color: white;">
+                Subscriptions not your style? Explore our handpicked range of artisan coffees, crafted to perfection for every coffee lover.
+            </p>
+            <a href="shop.html" style="font-size: 1em; font-weight: bold; text-transform: uppercase; color: #ffffff; text-decoration: none; border: 2px solid #ffffff; padding: 10px 20px; transition: background-color 0.3s, color 0.3s;">
+                Browse Our Coffees
+            </a>
         </div>
     </div>
-</section>
-    <!-- ##### Testimonial Area Start ##### -->
-    <section class="testimonial-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="testimonials-slides owl-carousel">
+    
 
-                        <!-- Single Testimonial Slide -->
-                        <div class="single-testimonial-slide">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-thumb">
-                                        <img src="img/img11.jpeg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-content">
-                                        <!-- Section Heading -->
-                                        <div class="section-heading">
-                                            <h2>DIVAA UTHKARSHA</h2>
-                                            <p>Founder and CEO of Project Surya</p>
-                                        </div>
-                                        <p>
-                                            Divaa Uthkarsha, is a youth
-                                            changemaker,
-                                            social entrepreneur from Bangalore, India. As the Founder and CEO of Project Surya, at the age of 13, Divaa made it her mission to ensure that good health and well-being is made accessible to everyone. "Access to healthcare is not a privilege, but a basic human right", she says.
-                                            When her younger brother Surya got diagnosed with Type One Diabetes, she started Project Surya in ode to him. Having been recognized by the national media, as a "trailblazing changemaker", her passion for social entrepreneurship and helping people has shined through.
-                                            She is a Diana Award Recipient and a Top 50 Global Student Prize Winner.
-                                            Her story has been featured by the national press and newspapers - Femina, The Hindu, Deccan Herald, YourStory, Time's Week Magazine and national radio too!</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-testimonial-slide">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-thumb">
-                                        <img style="height: 315px; width: 315px; border-radius: 50%; object-fit: cover;" src="img/coo.jpeg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-content">
-                                        <!-- Section Heading -->
-                                        <div class="section-heading">
-                                            <h2>CIEA VERMA</h2>
-                                            <p>Chief Operating Officer (COO)</p>
-                                        </div>
-                                        <p>Ciea Verma is an accomplished student leader with a passion for literature, psychology and related disciplines of social sciences, driven by strong interpersonal skills. She has extensive experience in project management, editorial roles, and public speaking. She has demonstrated strong organizational skills, leading diverse teams and managing logistics for major events. Her accolades include multiple best student and speaker awards, reflecting her commitment to excellence and leadership. She serves as the Chief Operating Officer at Project Surya.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        <!-- Single Testimonial Slide -->
-                        <!-- <div class="single-testimonial-slide">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-thumb">
-                                        <img src="img/bg-img/14.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-content">
-                                        Section Heading
-                                        <div class="section-heading">
-                                            <h2>TESTIMONIAL</h2>
-                                            <p>Some kind words from clients about Alazea</p>
-                                        </div>
-                                        <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
-                                        <div class="testimonial-author-info">
-                                            <h6>Mr. Nazrul Islam</h6>
-                                            <p>CEO of NAVATECH</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <!-- Single Testimonial Slide -->
-                        <!-- <div class="single-testimonial-slide">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-thumb">
-                                        <img src="img/bg-img/15.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="testimonial-content">
-                                        Section Heading
-                                        <div class="section-heading">
-                                            <h2>TESTIMONIAL</h2>
-                                            <p>Some kind words from clients about Alazea</p>
-                                        </div>
-                                        <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
-                                        <div class="testimonial-author-info">
-                                            <h6>Mr. Jonas Nick</h6>
-                                            <p>CEO of NAVATECH</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Testimonial Area End ##### -->
-
+    
     <footer class="footer-area" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);">        <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
@@ -385,7 +420,7 @@ z-index: 0; /* Ensure the overlay is above the background image */
                     <div class="col-12 col-sm-6 col-lg-6">
                         <div class="single-footer-widget">
                             <div class="footer-logo mb-30">
-                                <a href="#"><img style="height: 100px; width: 100px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
+                                <a href="#"><img style="height: 100px; width: 100px;" src="img/logoB.png" alt=""></a>
                             </div>
                             <p>Like our work? 
                                 Spread the word. 
@@ -409,6 +444,7 @@ z-index: 0; /* Ensure the overlay is above the background image */
     
                             <div class="contact-information">
                                 
+                                
                                 <p><span>Email:</span> project.surya.info@gmail.com</p>
                                 <hr style="border: 1px solid white; margin: 10px 0;">
                                 <p>Website created by YOTI: Youth Opportunities in Tech Innovations</p>
@@ -422,6 +458,7 @@ z-index: 0; /* Ensure the overlay is above the background image */
                 </div>
             </div>
         </div>
+
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

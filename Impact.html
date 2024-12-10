@@ -9,25 +9,108 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Project Surya</title>
+    <title>The Brew Barn</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/ProjectSuryaLogo.png">
+    <link rel="icon" href="img/logoB.png">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
-    <style>        
-
-@keyframes changeBackground {
-            0% { background-image: url('img/a1.jpeg'); }
-            33% { background-image: url('img/a1.jpeg'); } /* Image 1 for 33% of the time */
-            33.01% { background-image: url('img/a2.jpeg'); }
-            66% { background-image: url('img/a2.jpeg'); } /* Image 2 for 33% of the time */
-            66.01% { background-image: url('img/a3.jpeg'); }
-            100% { background-image: url('img/a3.jpeg'); } /* Image 3 for 34% of the time */
+    <style>
+        /* Styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .coffee-card {
+            width: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .coffee-card:hover {
+            transform: scale(1.05);
+        }
+        .coffee-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .coffee-card .details {
+            padding: 15px;
+        }
+        .coffee-card .name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .coffee-card .price {
+            font-size: 16px;
+            color: #f39c12;
+            margin: 10px 0;
+        }
+        .coffee-card .buy-button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .coffee-card .buy-button:hover {
+            background-color: #e67e22;
         }
 
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .modal .close:hover {
+            color: black;
+        }
+    </style>
+
+    <style>        
     .stat {
         margin-bottom: 20px;
         padding: 15px;
@@ -45,212 +128,6 @@
         font-size: 1.2em;
         color: #6D4C41;
     }
-
-    .wrapper {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /* Align items vertically */
-    
-}
-
-.container2 {
-    height: 400px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-}
-
-.card {
-    width: 80px;
-    border-radius: .75rem;
-    background-size: cover;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 2rem;
-    margin: 0 10px;
-    display: flex;
-    align-items: flex-end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-    height: 500px;
-}
-
-@media (max-width: 768px) {
-    .wrapper {
-    width: 100%;
-    height: 500vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /* Align items vertically */
-    
-}
-
-
-.container2 {
-    display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center;
-    height: auto; /* Adjust height as needed */
-}
-
-.card {
-    width: 80px; /* Adjust width as needed */
-    max-width: 300px; /* Adjust max width as needed */
-    margin: 10px 0; /* Adjust margin to space out cards vertically */
-    display: block;
-    border-radius: .75rem;
-    background-size: cover;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 2rem;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-    height: 700px; /* Adjust height as needed */
-}
-
-    
-}
-
-
-.card > .row {
-    color: white;
-    display: flex;
-    flex-wrap: nowrap;
-}
-.icon {
-    height: 50px;
-    z-index: 1;
-}
-.card > .row > .icon {
-    background: #223;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-}
-
-.card > .row > .description {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    height: 100%;
-    width: 520px;
-    margin-right: 15px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition-delay: .3s;
-    transition: all .3s ease;
-}
-
-.description p {
-    color: #b0b0ba;
-    padding-top: 5px;
-}
-
-.description h4 {
-    text-transform: uppercase;
-}
-
-input {
-    display: none;
-}
-
-input:checked + label {
-    width: 600px;
-}
-
-input:checked + label .description {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.card[for="c1"] {
-    background-image: url('./img1.jpeg');
-}
-.card[for="c2"] {
-    background-image: url('./img2.jpeg');
-}
-.card[for="c3"] {
-    background-image: url('./img3.jpeg');
-}
-.card[for="c4"] {
-    background-image: url('./img4.jpeg');
-}
-
-/*image animation css*/
-@keyframes changeBackground2 {
-    0% { opacity: 1; }
-    33% { opacity: 1; }
-    33.01% { opacity: 0; }
-    66% { opacity: 0; }
-    66.01% { opacity: 1; }
-    100% { opacity: 1; }
-}
-
-.image-slider {
-    position: relative;
-    width: 300px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
-    overflow: hidden;
-}
-
-.image-slider img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: changeBackground2 20s infinite;
-}
-
-.image-slider img:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.image-slider img:nth-child(2) {
-    animation-delay: 5s;
-}
-
-.image-slider img:nth-child(3) {
-    animation-delay: 10s; /* Ensure this delay is correct */
-}
-
-.image-slider img:nth-child(4) {
-    animation-delay: 15s; /* Ensure this delay is correct */
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 50%; /* Ensure the card takes full width on mobile */
-        max-width: none; /* Remove max-width constraint */
-        margin: 10px 0; /* Adjust margin for vertical spacing */
-        height: auto; /* Allow height to adjust based on content */
-        display: block; /* Ensure display block to stack elements vertically */
-    }
-
-    .description {
-        opacity: 1 !important; /* Ensure description is always visible */
-        transform: translateY(0) !important; /* Reset transformation for mobile */
-        height: auto; /* Adjust height to fit content */
-        width: 100%; /* Ensure full width */
-    }
-    
-    input:checked + label {
-        width: 60%;
-    }
-}
-    
-
 </style>
 
 </head>
@@ -269,15 +146,16 @@ input:checked + label .description {
 
         <!-- ***** Top Header Area ***** -->
         <div class="top-header-area">
-            
-
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
                              
 
                             <!-- Top Header Content -->
                             <div class="top-header-meta d-flex">
+                                <!-- Language Dropdown -->
                                 
                             </div>
                         </div>
@@ -294,7 +172,7 @@ input:checked + label .description {
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img style="width: 90px; height: 90px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img style="width: 300px; height: 90px;" src="img/logoB.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -312,14 +190,10 @@ input:checked + label .description {
                             <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
-                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="Impact.html">Impact</a>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="donate.html">Donate</a>
-                                    <li><a href="contact.html">Contact</a></li>       
-                                    <li><a href="Awards.html">Recognition and Media</a>
-
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="about.html">Subscriptions</a></li>
+                                    <li><a href="Impact.html">Learn</a>
+                                    <li><a href="gallery.html">Order Ahead</a></li>
                                 </ul>
 
                               
@@ -348,246 +222,69 @@ input:checked + label .description {
         <div class="hero-post-slides owl-carousel">
 
             <!-- Single Hero Post -->
-            <div class="single-hero-post bg-overlay">
+            <div class="single-hero-post bg-overlay" style="height: 500px;">
                 <!-- Post Image -->
-                <div class="slide-img bg-img" style="background-image: url('img/la.jpeg')"></div>
+                <div class="slide-img bg-img" style="background-image: url('img/bg2.jpg');"></div>
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <!-- Post Content -->
                             <div class="hero-slides-content text-center">
-                                <h2>What We Do and Our Impact</h2>
-                                
+                                <div>
+                                    <h1 style="font-size: 3rem; letter-spacing: 2px; margin: 0; color: white;">Enjoy Your Favorite Coffee Every Month with Our Subscription Plans</h1>
+                                    <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; color: white; border-bottom: 2px solid #00bcd4; text-decoration: none; font-weight: bold;">VIEW SUBSCRIPTIONS</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             
 
             
     </section>
-
-    <section style="background-color: #714423; padding: 100px 0;" class="impact-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="impact-content text-center">
-                        <h2 style="color: white; font-size: 36px; margin-bottom: 30px;">Impact: Our Numbers</h2>
-                        <div class="impact-stats">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">4,26,000+</h3>
-                                        <p style="color: #714423; font-size: 16px;">Total Reach</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">3,60,000+</h3>
-                                        <p style="color: #714423; font-size: 16px;">People Reached</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">40,000+</h3>
-                                        <p style="color: #714423; font-size: 16px;">People Empowered</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">590</h3>
-                                        <p style="color: #714423; font-size: 16px;">T1 Diabetic Kids Aided</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">~₹ 13,00,000</h3>
-                                        <p style="color: #714423; font-size: 16px;">Raised</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">1400</h3>
-                                        <p style="color: #714423; font-size: 16px;">T1 Parents Counselled</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">60</h3>
-                                        <p style="color: #714423; font-size: 16px;">ASHA Workers Educated</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">6200</h3>
-                                        <p style="color: #714423; font-size: 16px;">Insulin Vials Donated</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">2500</h3>
-                                        <p style="color: #714423; font-size: 16px;">Strips Donated</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">2000</h3>
-                                        <p style="color: #714423; font-size: 16px;">Insulin Syringes Donated</p>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 30px;" class="col-md-4">
-                                    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                        <h3 style="color: #714423; font-size: 24px; font-weight: bold;">~60,000</h3>
-                                        <p style="color: #714423; font-size: 16px;">accounts reached through Social Media Campaigns</p>
-                                    </div>
-                                    
-                            </div>
-                            
-                            <div style="margin-top: 30px;" class="col-md-4">
-                                <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <h3 style="color: #714423; font-size: 24px; font-weight: bold;">8000</h3>
-                                    <p style="color: #714423; font-size: 16px;">people ran the T1 Diabetes Midnight Marathon</p>
-                            </div>
-                            </div>
-                            <div style="margin-top: 30px;" class="col-md-4">
-                                <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <h3 style="color: #714423; font-size: 24px; font-weight: bold;">80+</h3>
-                                    <p style="color: #714423; font-size: 16px;">committed volunteers from 10 cities and 4 countries</p>
-                            </div>
-                            </div>
-                            <div style="margin-top: 30px;" class="col-md-4">
-                                <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <h3 style="color: #714423; font-size: 24px; font-weight: bold;">7 City/Country Chapters -</h3>
-                                    <p style="color: #714423; font-size: 16px;">Bangalore, New Delhi,
-                                        Varanasi, USA, Canada, Ghaziabad, Mumbai</p>
-                            </div>
-                            </div>
-                            <div style="margin-top: 30px;" class="col-md-4">
-                                <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <h3 style="color: #714423; font-size: 24px; font-weight: bold;">36+</h3>
-                                    <p style="color: #714423; font-size: 16px;">Sessions Conducted</p>
-                            </div>
-                            </div>
-                            <div style="margin-top: 30px;" class="col-md-4">
-                                <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <h3 style="color: #714423; font-size: 24px; font-weight: bold;">4</h3>
-                                    <p style="color: #714423; font-size: 16px;">Successful Campaigns</p>
-                            </div>
-                            </div>
-                        </div>
-                        
-
-                                
-                                
-                        
-                        </div>
-                    </div>
-                </div>
+    <div style="display: flex; height: 100vh;">
+        <!-- Left panel -->
+        <div style="width: 30%; background-color: #f5f5f5; overflow-y: auto; padding: 20px;">
+          <button style="width: 100%; padding: 15px; background-color: #00bcd4; color: white; border: none; border-radius: 5px; font-size: 16px; margin-bottom: 20px;">Pickup</button>
+          <div style="margin-bottom: 20px;">
+            <label for="search" style="display: block; font-size: 14px; font-weight: bold; margin-bottom: 5px;">Search by location</label>
+            <input id="search" type="text" placeholder="Enter Address, City, State, or Zip Code" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+          </div>
+          <div style="border-top: 1px solid #ddd; padding-top: 20px;">
+            <div style="margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 18px;">Forney OC</h3>
+              <p style="margin: 5px 0 10px; font-size: 14px; color: #555;">772 Genes Avenue,Suite 102, Forney, Texas, 73626</p>
+              <img src="img/shop1.jpg" alt="Location Image" style="width: 100%; border-radius: 5px;">
             </div>
+            <div style="margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 18px;">Dallas HQ</h3>
+              <p style="margin: 5px 0 10px; font-size: 14px; color: #555;">123 Main St, Dallas, Texas, 75201</p>
+              <img src="img/shop2.jpg" alt="Location Image" style="width: 100%; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 18px;">Fort Worth Branch</h3>
+              <p style="margin: 5px 0 10px; font-size: 14px; color: #555;">789 West Ave, Fort Worth, Texas, 76102</p>
+              <img src="img/shop3.jpg" alt="Location Image" style="width: 100%; border-radius: 5px;">
+            </div>
+          </div>
         </div>
-    </section>
     
-
-    <!-- COOL Card Animation -->
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin-top: -200px;">
-        <h1 style="font-size: clamp(24px, 6vw, 60px); color: black; text-align: center;">OUR ACTIONS</h1>
-        <h2 style="font-size: clamp(12px, 2vw, 20px); color: #DEAF84; text-align: center;">Three Prongs of Action: Awareness, Advocacy, and Funding</h2>
-    </div>
-    
-    <div class="wrapper" style="margin-top: -400px;">
-        
-        <div class="container2">
-            <input type="radio" name="slide" id="c1" checked>
-            <label for="c1" class="card">
-                <div class="row">
-                    <div class="icon">1</div>
-                    <div class="description">
-                       
-                         <h3 style="font-size: 25px; color: rgb(0, 0, 0); margin-top: 30px;">Awareness</h3>
-                         <ol style="color: black;">
-                             <li>1)	We conduct diabetes knowledge-building workshops and counseling sessions for underprivileged type one diabetic children and their families with the help of endocrinologists and doctors. </li>
-                             <li>2)	We equip grassroots-level women health workers in India called ASHA workers with diabetes capacity and knowledge building, who are each responsible for 1000 people in their community. ASHA workers were introduced by the Government of India in 2005 as part of the National Rural Health Mission (NRHM). They were envisioned as a link between the community and the public health system, aiming to improve access to healthcare services, especially for marginalized populations. ASHA workers conduct community-level health education and awareness programs on various health issues, including preventive measures and healthy behaviors.</li>
-                             <li>3)	Our young team of volunteers use our diabetes awareness modules to conduct workshops in schools, NGOs and government education institutions for teenagers on topics including the symptoms, risk factors and science behind diabetes - for early diagnosis and debunking misconceptions to ensure better community support and awareness.</li>
-                         </ol>
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c2" >
-            <label for="c2" class="card">
-                <div class="row">
-                    <div class="icon">2</div>
-                    <div class="description">
-                         <!-- Funding -->
-                         <h3 style="font-size: 25px; color: black; margin-top: 30px;">Funding</h3>
-                         <ol style="color: black;">
-                             <li>We raise funds to sponsor life-saving insulin, syringes, needles and other medical resources for underprivileged type one diabetic kids who need insulin to survive.</li>
-                             <li>We do this through crowdfunding on Milaap, fundraising events, CSR grants and funding from clubs such as Rotary, and Innerwheel.</li>
-                             <li>Our collaborations with the government constituencies and international collaborators and partners like Bristlecone, International We Serve Foundation, and 1M1B Foundation.</li>
-                         </ol>
-                         <div class="image-slider" style="width: 100%; height: 250px; border-radius: 0px; margin-top: 10px;">
-                            <img src="img/f1.jpeg" alt="Image 1">
-                            <img src="img/f2.jpeg" alt="Image 2">
-                            <img src="img/f3.jpeg" alt="Image 3">
-                            <img src="img/f4.jpeg" alt="Image 3">
-                        </div>           
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c3" >
-            <label for="c3" class="card">
-                <div class="row">
-                    <div class="icon">3</div>
-                    <div class="description">
-                        <!-- Advocacy -->
-                        <h3 style="font-size: 25px; color: black; margin-top: 30px;">Advocacy</h3>
-                        <ol style="color: black;">
-                            <li>We endorse various petitions calling for tax-free insulin in India and inclusion in RPwD Disabilities Act.</li>
-                            <li>We also attended the Virtual NCPCR CBSE discussion on provisions for T1Ds during board exams.</li>
-                            <li>We have been a part of many international, national and state-level conferences-- like the G20 Student Summit, Activate Impact Summit, and Innerwheel State Conference to name a few- where we constantly advocate for our goals and the diabetic cause.</li>
-                            <li>We are actively engaging our community via social media channels like Instagram, Linkedin and Twitter through our engaging content and curate posts to spread awareness and advocate on a global scale reaching millions.</li>
-                        </ol>
-                        
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c4" >
-            <label for="c4" class="card">
-                <div class="row">
-                    <div class="icon">4</div>
-                    <div class="description">
-                        <h3 style="font-size: 25px; color: black; margin-top: 30px;">More Advocacy</h3>
-                        <!-- <h3 style="font-size: 15px; color: black; margin-top: 30px;">In December 2022, Project Surya effectively collaborated with Karnataka’s ex-deputy Chief
-                            Minister to bring diabetes awareness to 10,000+ people in a Midnight Walkathon. Through the
-                            walkathon, incremental funds were raised, which will be used to further support the children.
-                            The ex-deputy CM addressed the crowd to spread diabetes awareness and later recorded a video
-                            for social media supporting Project Surya. The event press coverage plus the video further spread
-                            the message. More than 8000 people ran in support of people with T1 diabetes.
-                            </h3> -->
-                            <ol style="color: black;">
-                                <li>Minister to bring diabetes awareness to 10,000+ people in a Midnight Walkathon. Through the
-                                    walkathon, incremental funds were raised, which will be used to further support the children.
-                                    The ex-deputy CM addressed the crowd to spread diabetes awareness and later recorded a video
-                                    for social media supporting Project Surya. The event press coverage plus the video further spread
-                                    the message. More than 8000 people ran in support of people with T1 diabetes.</li>
-                                
-                            </ol>
-                            <div class="image-slider" style="width: 100%; height: 250px; border-radius: 0px; margin-top: 10px;">
-                                <img src="img/a1.jpeg" alt="Image 1">
-                                <img src="img/a2.jpeg" alt="Image 2">
-                                <img src="img/a3.jpeg" alt="Image 3">
-                            </div>  
-                    </div>
-                </div>
-            </label>
+        <!-- Right panel -->
+        <div style="width: 70%;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093437!2d144.9537353159043!3d-37.81720974202107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727b5d6a2c8e0!2sGoogle!5e0!3m2!1sen!2sus!4v1614844997296!5m2!1sen!2sus"
+            width="100%" 
+            height="100%" 
+            style="border: 0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
         </div>
-    </div>
-    
-    
-    
+      </div>
 
     
+
     
     <footer class="footer-area" style="background-image: linear-gradient(135deg, #dead84, #97704F, #714423, #2F1b12, #43392F);">        <!-- Main Footer Area -->
         <div class="main-footer-area">
@@ -597,12 +294,11 @@ input:checked + label .description {
                     <div class="col-12 col-sm-6 col-lg-6">
                         <div class="single-footer-widget">
                             <div class="footer-logo mb-30">
-                                <a href="#"><img style="height: 100px; width: 100px;" src="img/core-img/ProjectSuryaLogo.png" alt=""></a>
+                                <a href="#"><img style="height: 100px; width: 100px;" src="img/logoB.png" alt=""></a>
                             </div>
                             <p>Like our work? 
                                 Spread the word. 
                                 </p>
-                            
                             <div class="social-info">
                                 
                                 <a href="https://x.com/project_surya_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
